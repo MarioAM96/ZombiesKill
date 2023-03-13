@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Zombies Kill</string>
+    <string name="BTNLOGIN">login</string>
+    <string name="BTNREGISTRO">Registro</string>
 </resources>

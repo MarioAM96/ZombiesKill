@@ -22,7 +22,7 @@ public class Splash extends AppCompatActivity {
                 //CODIGO QUE EJECUTA EL HANDLER
                 Intent Intent = new Intent(Splash.this,MainActivity.class);
                 startActivity(Intent);
-            };
+            }
         }, Duracion_Splash);
     }
 }

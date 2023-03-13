@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "69733242423",
+    "project_id": "zombies-kill-e45b4",
+    "storage_bucket": "zombies-kill-e45b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69733242423:android:c58e2f4ccbe77e6f9fd1b2",
+        "android_client_info": {
+          "package_name": "com.example.zombieskill"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69733242423-r94cv0nq672j2abt54j7s06eev7uc4mn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zombieskill",
+            "certificate_hash": "37ad0ee68b8e0b9cc0fec794aeaad78fa91afb67"
+          }
+        },
+        {
+          "client_id": "69733242423-n3lpvacd6mk8jgd6j64em4lil0l6pskn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVY_7e4QXJC3kvpSfgbW3Cpa_tvuNfO18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69733242423-n3lpvacd6mk8jgd6j64em4lil0l6pskn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

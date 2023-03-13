@@ -13,7 +13,7 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        int Duracion_Splash = 1500;
+        int Duracion_Splash = 3000;
 
         //Handler EJECUTA UN DETERMINADO CODIGO EN UN TIEMPO DETERMINADO
         new Handler().postDelayed(new Runnable() {

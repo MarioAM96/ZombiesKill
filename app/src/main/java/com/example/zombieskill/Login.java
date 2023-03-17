@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ public class Login extends AppCompatActivity {
         correoLogin = findViewById(R.id.correoLogin);
         passLogin = findViewById(R.id.passLogin);
         BtnLogin = findViewById(R.id.BtnLogin);
+        auth = FirebaseAuth.getInstance();
 
         BtnLogin.setOnClickListener(view -> {
             String email = correoLogin.getText().toString();
@@ -34,7 +36,7 @@ public class Login extends AppCompatActivity {
 
             //Validacion de correo electronico
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                correoLogin.setError("Correo no válido");
+                correoLogin.setError("Correno no válido");
                 correoLogin.setFocusable(true);
             } else if (pass.length()<6) {
                 passLogin.setError("La contraseña debe tener almenos 6 caractes");
@@ -51,10 +53,10 @@ public class Login extends AppCompatActivity {
                     if (task.isSuccessful()){
                         FirebaseUser user = auth.getCurrentUser();
                         startActivity(new Intent(Login.this, Menu.class));
-                        assert user != null; //El usuario no debe ser nulo
-                        Toast.makeText(Login.this, "BIENVENIDO"+user.getEmail(), Toast.LENGTH_SHORT).show();
+                        assert user != null;
+                        Toast.makeText(Login.this, "BIENVENIDO "+user.getEmail(),Toast.LENGTH_SHORT).show();
                         finish();
                     }
-                }).addOnFailureListener(e -> Toast.makeText(Login.this, ""+e.getMessage(), Toast.LENGTH_SHORT));
+                }).addOnFailureListener(e -> Toast.makeText(Login.this, ""+e.getMessage(),Toast.LENGTH_SHORT).show());
     }
 }

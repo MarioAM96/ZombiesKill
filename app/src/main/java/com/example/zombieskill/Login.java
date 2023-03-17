@@ -47,6 +47,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    //FUNCION PARA LOGGEARSE EN EL SISTEMA
     private void LogeoDeJugador(String email, String pass){
         auth.signInWithEmailAndPassword(email,pass)
                 .addOnCompleteListener(task -> {

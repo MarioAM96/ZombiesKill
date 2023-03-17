@@ -53,7 +53,7 @@ public class Login extends AppCompatActivity {
                     if (task.isSuccessful()){
                         FirebaseUser user = auth.getCurrentUser();
                         startActivity(new Intent(Login.this, Menu.class));
-                        assert user != null;
+                        assert user != null; //PARA QUE EL USUARIO NO SEA NULO
                         Toast.makeText(Login.this, "BIENVENIDO "+user.getEmail(),Toast.LENGTH_SHORT).show();
                         finish();
                     }

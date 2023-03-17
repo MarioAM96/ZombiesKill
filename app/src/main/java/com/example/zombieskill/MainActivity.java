@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,12 +16,14 @@ public class MainActivity extends AppCompatActivity {
 
         BLOGIN = findViewById(R.id.BTNLOGIN);
         BREGISTRO = findViewById(R.id.BTNREGISTRO);
-
+        //BOTON QUE REDIRIGE A LOGIN
         BLOGIN.setOnClickListener(view -> {
             //El Toast muestra un mensaje
-            Toast.makeText(MainActivity.this, "SE AH PRESIONADO EL BOTON LOGIN", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, "SE AH PRESIONADO EL BOTON LOGIN", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            startActivity(intent);
         });
-
+        //BOTON QUE REDIRIGE AL REGISTRO
         BREGISTRO.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this,Registro.class);
             startActivity(intent);

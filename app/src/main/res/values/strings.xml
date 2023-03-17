@@ -1,11 +1,17 @@
 <resources>
+    <!--ACTIVIDAD MAIN-->
     <string name="app_name">Zombies Kill</string>
     <string name="BTNLOGIN">login</string>
     <string name="BTNREGISTRO">Registro</string>
-
+    <!--ACTIVIDAD REGISTRO-->
     <string name="correoEt">Correo Electrónico</string>
     <string name="passEt">Contraseña</string>
     <string name="nombreEt">Nombre</string>
     <string name="fechaTxt">Fecha</string>
     <string name="Registrar">Registrar</string>
+    <!--ACTIVIDAD LOGIN-->
+    <string name="correoLogin">Correo Electrónico</string>
+    <string name="passLogin">Contraseña</string>
+    <string name="BntLogin">Ingresar</string>
+
 </resources>

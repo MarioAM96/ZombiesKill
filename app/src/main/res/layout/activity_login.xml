@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registro">
+    android:background="#FFFFFF"
+    tools:context=".Login">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -13,69 +14,45 @@
         android:orientation="vertical"
         android:padding="10dp"
         android:gravity="center">
-        
+
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <EditText
-                android:id="@+id/correoEt"
+                android:id="@+id/correoLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/correoLogin"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                android:minHeight="48dp"
-                android:hint="@string/correoEt"
-                tools:ignore="VisualLintTextFieldSize"/>
+                android:minHeight="48dp" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <EditText
-                android:id="@+id/passEt"
+                android:id="@+id/passLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
+                android:hint="@string/passLogin"
+                android:layout_marginTop="10dp"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:minHeight="48dp"
-                android:hint="@string/passEt"
-                tools:ignore="VisualLintTextFieldSize"/>
+                android:minHeight="48dp" />
+
         </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/nombreEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:hint="@string/nombreEt"
-                tools:ignore="VisualLintTextFieldSize"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <EditText
-            android:id="@+id/fechaTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:minHeight="48dp"
-            android:text="@string/fechaTxt"
-            android:autofillHints=""
-            tools:ignore="VisualLintTextFieldSize"/>
 
         <Button
-            android:id="@+id/Registrar"
-            android:text="@string/Registrar"
-            android:layout_marginTop="20sp"
+            android:id="@+id/BtnLogin"
+            android:text="@string/BntLogin"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

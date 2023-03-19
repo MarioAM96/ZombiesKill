@@ -61,7 +61,7 @@ public class Menu extends AppCompatActivity {
         CerrarSesionBtn.setOnClickListener(view -> CerrarSesion());
     }
 
-    //ESTE METODO SE EJECUTA CUANDO SE ABRE EL JUEGO
+    //ESTE METODO SE EJECUTA CUANDO SE ABRE EL JUEGOS
     protected void onStart(){
         UsuarioLogueado();
         super.onStart();

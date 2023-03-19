@@ -13,5 +13,7 @@
     <string name="correoLogin">Correo Electrónico</string>
     <string name="passLogin">Contraseña</string>
     <string name="BntLogin">Ingresar</string>
+    <!--ACTIVIDAD MENU-->
+    <string name="CerrarSesion">Cerra Sesión</string>
 
 </resources>

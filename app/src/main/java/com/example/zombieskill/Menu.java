@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -13,6 +14,7 @@ public class Menu extends AppCompatActivity {
 
     FirebaseAuth auth;
     FirebaseUser user;
+    Button CerrarSesion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,9 @@ public class Menu extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+        CerrarSesion = findViewById(R.id.CerrarSesion);
+
+        CerrarSesion.setOnClickListener(view -> CerrarSesion());
     }
 
     //ESTE METODO SE EJECUTA CUANDO SE ABRE EL JUEGO
@@ -36,5 +41,11 @@ public class Menu extends AppCompatActivity {
             startActivity(new Intent(Menu.this, MainActivity.class));
             finish();
         }
+    }
+
+    private void CerrarSesion(){
+        auth.signOut();
+        startActivity(new Intent(Menu.this, MainActivity.class));
+        Toast.makeText(this, "Sesión finalizada", Toast.LENGTH_SHORT).show();
     }
 }

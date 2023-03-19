@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,7 +16,8 @@ public class Menu extends AppCompatActivity {
 
     FirebaseAuth auth;
     FirebaseUser user;
-    Button CerrarSesion;
+    Button CerrarSesionBtn, JugarBtn, PuntuacionesBtn, AcercaDeBtn;
+    TextView MiPuntuaciontxt, uid, correo, nombre, MenuTxt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +25,40 @@ public class Menu extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
-        CerrarSesion = findViewById(R.id.CerrarSesion);
 
-        CerrarSesion.setOnClickListener(view -> CerrarSesion());
+        MiPuntuaciontxt = findViewById(R.id.MiPuntuaciontxt);
+        uid = findViewById(R.id.uid);
+        correo = findViewById(R.id.correo);
+        nombre = findViewById(R.id.nombre);
+        MenuTxt = findViewById(R.id.Menutxt);
+
+        JugarBtn = findViewById(R.id.JugarBtn);
+        PuntuacionesBtn = findViewById(R.id.PuntuacionesBtn);
+        AcercaDeBtn = findViewById(R.id.AcercaDeBtn);
+        CerrarSesionBtn = findViewById(R.id.CerrarSesionBtn);
+
+        JugarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Menu.this, "JUGAR", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        PuntuacionesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Menu.this, "PUNTUACIONES", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AcercaDeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Menu.this, "ACERCA DE", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        CerrarSesionBtn.setOnClickListener(view -> CerrarSesion());
     }
 
     //ESTE METODO SE EJECUTA CUANDO SE ABRE EL JUEGO

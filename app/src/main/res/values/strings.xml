@@ -14,6 +14,16 @@
     <string name="passLogin">Contraseña</string>
     <string name="BntLogin">Ingresar</string>
     <!--ACTIVIDAD MENU-->
-    <string name="CerrarSesion">Cerra Sesión</string>
+    <string name="MiPOuntuaciontxt">Mi Puntuación</string>
+    <string name="Zombies">--</string>
+    <string name="uid">--</string>
+    <string name="correo">--</string>
+    <string name="nombre">--</string>
+    <string name="Menutxt">Menú</string>
+
+    <string name="JugarBtn">Jugar</string>
+    <string name="PuntuacionesBtn">Puntuaciones</string>
+    <string name="AcercaDeBtn">Acerca de</string>
+    <string name="CerrarSesionBtn">Cerrar Sesión</string>
 
 </resources>

@@ -20,7 +20,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 //CODIGO QUE EJECUTA EL HANDLER
-                Intent Intent = new Intent(Splash.this,MainActivity.class);
+                Intent Intent = new Intent(Splash.this,Menu.class);
                 startActivity(Intent);
             }
         }, Duracion_Splash);

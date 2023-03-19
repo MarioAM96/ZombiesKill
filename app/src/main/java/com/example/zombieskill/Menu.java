@@ -1,5 +1,6 @@
 package com.example.zombieskill;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,13 +12,22 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class Menu extends AppCompatActivity {
 
     FirebaseAuth auth;
     FirebaseUser user;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference JUGADORES;
     Button CerrarSesionBtn, JugarBtn, PuntuacionesBtn, AcercaDeBtn;
-    TextView MiPuntuaciontxt, uid, correo, nombre, MenuTxt;
+    TextView MiPuntuaciontxt, uid, correo, nombre, MenuTxt, Zombies,fecha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,15 +36,20 @@ public class Menu extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        JUGADORES = firebaseDatabase.getReference("ZOMBIES KILL DB");
+
         //UBICACION
         String ubicacion = "fuentes/zombie.TTF";
         Typeface Tf = Typeface.createFromAsset(Menu.this.getAssets(), ubicacion);
 
 
+        Zombies = findViewById(R.id.Zombies);
         MiPuntuaciontxt = findViewById(R.id.MiPuntuaciontxt);
         uid = findViewById(R.id.uid);
         correo = findViewById(R.id.correo);
         nombre = findViewById(R.id.nombre);
+        fecha = findViewById(R.id.fecha);
         MenuTxt = findViewById(R.id.Menutxt);
 
         JugarBtn = findViewById(R.id.JugarBtn);
@@ -70,6 +85,7 @@ public class Menu extends AppCompatActivity {
     //EL METODO COMPRUEBA SI EL JUGADOR HA INICIADO SESIONMN
     private void UsuarioLogueado(){
         if (user != null){
+            Consulta();
             Toast.makeText(this, "Jugador en linea", Toast.LENGTH_SHORT).show();
         }
         else {
@@ -82,5 +98,35 @@ public class Menu extends AppCompatActivity {
         auth.signOut();
         startActivity(new Intent(Menu.this, MainActivity.class));
         Toast.makeText(this, "Sesión finalizada", Toast.LENGTH_SHORT).show();
+    }
+
+    private void Consulta(){
+        //CONSULTA
+        Query query = JUGADORES.orderByChild("Email").equalTo(user.getEmail());
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+                for(DataSnapshot ds : datasnapshot.getChildren()){
+                    //OBTENCION DE LOS DATOS
+                    String zombiesString = ""+ds.child("Zombies").getValue();
+                    String uidString = ""+ds.child("Uid").getValue();
+                    String emailString = ""+ds.child("Email").getValue();
+                    String nombreString = ""+ds.child("Nombres").getValue();
+                    String fechaString = ""+ds.child("Fecha").getValue();
+                    //ASGINAR LOS DATOS OBTENIDOS
+                    Zombies.setText(zombiesString);
+                    uid.setText(uidString);
+                    correo.setText(emailString);
+                    nombre.setText(nombreString);
+                    fecha.setText(fechaString);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

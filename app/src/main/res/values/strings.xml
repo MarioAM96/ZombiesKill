@@ -19,6 +19,7 @@
     <string name="uid">--</string>
     <string name="correo">--</string>
     <string name="nombre">--</string>
+    <string name="fecha">--</string>
     <string name="Menutxt">Menu</string>
 
     <string name="JugarBtn">Jugar</string>

@@ -3,8 +3,8 @@ package com.example.zombieskill;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +26,11 @@ public class Menu extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
+        //UBICACION
+        String ubicacion = "fuentes/zombie.TTF";
+        Typeface Tf = Typeface.createFromAsset(Menu.this.getAssets(), ubicacion);
+
+
         MiPuntuaciontxt = findViewById(R.id.MiPuntuaciontxt);
         uid = findViewById(R.id.uid);
         correo = findViewById(R.id.correo);
@@ -36,6 +41,17 @@ public class Menu extends AppCompatActivity {
         PuntuacionesBtn = findViewById(R.id.PuntuacionesBtn);
         AcercaDeBtn = findViewById(R.id.AcercaDeBtn);
         CerrarSesionBtn = findViewById(R.id.CerrarSesionBtn);
+
+        MiPuntuaciontxt.setTypeface(Tf);
+        uid.setTypeface(Tf);
+        correo.setTypeface(Tf);
+        nombre.setTypeface(Tf);
+        MenuTxt.setTypeface(Tf);
+
+        JugarBtn.setTypeface(Tf);
+        PuntuacionesBtn.setTypeface(Tf);
+        AcercaDeBtn.setTypeface(Tf);
+        CerrarSesionBtn.setTypeface(Tf);
 
         JugarBtn.setOnClickListener(view -> Toast.makeText(Menu.this, "JUGAR", Toast.LENGTH_SHORT).show());
 

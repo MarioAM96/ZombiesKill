@@ -3,6 +3,7 @@ package com.example.zombieskill;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -16,6 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
         BLOGIN = findViewById(R.id.BTNLOGIN);
         BREGISTRO = findViewById(R.id.BTNREGISTRO);
+
+        //UBICACION
+        String ubicacion = "fuentes/zombie.TTF";
+        Typeface Tf = Typeface.createFromAsset(MainActivity.this.getAssets(), ubicacion);
+
+        BLOGIN.setTypeface(Tf);
+        BREGISTRO.setTypeface(Tf);
+
         //BOTON QUE REDIRIGE A LOGIN
         BLOGIN.setOnClickListener(view -> {
             //El Toast muestra un mensaje

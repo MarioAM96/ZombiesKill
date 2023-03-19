@@ -2,6 +2,7 @@ package com.example.zombieskill;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.widget.Button;
@@ -34,6 +35,12 @@ public class Registro extends AppCompatActivity {
         Nombre = findViewById(R.id.nombreEt);
         Fecha = findViewById(R.id.fechaTxt);
         Registro = findViewById(R.id.Registrar);
+
+        //UBICACION
+        String ubicacion = "fuentes/zombie.TTF";
+        Typeface Tf = Typeface.createFromAsset(Registro.this.getAssets(), ubicacion);
+
+        Registro.setTypeface(Tf);
 
         auth = FirebaseAuth.getInstance();
 

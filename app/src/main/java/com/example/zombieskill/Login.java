@@ -4,6 +4,7 @@ package com.example.zombieskill;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Patterns;
 
@@ -29,6 +30,12 @@ public class Login extends AppCompatActivity {
         passLogin = findViewById(R.id.passLogin);
         BtnLogin = findViewById(R.id.BtnLogin);
         auth = FirebaseAuth.getInstance();
+
+        //UBICACION
+        String ubicacion = "fuentes/zombie.TTF";
+        Typeface Tf = Typeface.createFromAsset(Login.this.getAssets(), ubicacion);
+
+        BtnLogin.setTypeface(Tf);
 
         BtnLogin.setOnClickListener(view -> {
             String email = correoLogin.getText().toString();

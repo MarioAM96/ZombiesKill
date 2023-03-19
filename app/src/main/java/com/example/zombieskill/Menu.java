@@ -37,26 +37,11 @@ public class Menu extends AppCompatActivity {
         AcercaDeBtn = findViewById(R.id.AcercaDeBtn);
         CerrarSesionBtn = findViewById(R.id.CerrarSesionBtn);
 
-        JugarBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Menu.this, "JUGAR", Toast.LENGTH_SHORT).show();
-            }
-        });
+        JugarBtn.setOnClickListener(view -> Toast.makeText(Menu.this, "JUGAR", Toast.LENGTH_SHORT).show());
 
-        PuntuacionesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Menu.this, "PUNTUACIONES", Toast.LENGTH_SHORT).show();
-            }
-        });
+        PuntuacionesBtn.setOnClickListener(view -> Toast.makeText(Menu.this, "PUNTUACIONES", Toast.LENGTH_SHORT).show());
 
-        AcercaDeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Menu.this, "ACERCA DE", Toast.LENGTH_SHORT).show();
-            }
-        });
+        AcercaDeBtn.setOnClickListener(view -> Toast.makeText(Menu.this, "ACERCA DE", Toast.LENGTH_SHORT).show());
 
         CerrarSesionBtn.setOnClickListener(view -> CerrarSesion());
     }

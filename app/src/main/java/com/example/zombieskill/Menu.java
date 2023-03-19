@@ -27,7 +27,7 @@ public class Menu extends AppCompatActivity {
         UsuarioLogueado();
         super.onStart();
     }
-    //EL METODO COMPRUEBA SI EL JUGADOR HA INICIADO SESION
+    //EL METODO COMPRUEBA SI EL JUGADOR HA INICIADO SESIONM
     private void UsuarioLogueado(){
         if (user != null){
             Toast.makeText(this, "Jugador en linea", Toast.LENGTH_SHORT).show();

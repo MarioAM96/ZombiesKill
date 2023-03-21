@@ -19,6 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.net.Inet4Address;
+
 public class Menu extends AppCompatActivity {
 
     FirebaseAuth auth;
@@ -68,7 +70,21 @@ public class Menu extends AppCompatActivity {
         AcercaDeBtn.setTypeface(Tf);
         CerrarSesionBtn.setTypeface(Tf);
 
-        JugarBtn.setOnClickListener(view -> Toast.makeText(Menu.this, "JUGAR", Toast.LENGTH_SHORT).show());
+        JugarBtn.setOnClickListener((view) -> {
+                Toast.makeText(Menu.this, "JUGAR", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Menu.this, EscenarioJuego.class);
+
+                String UidS = uid.getText().toString();
+                String NombreS = nombre.getText().toString();
+                String ZombieS = Zombies.getText().toString();
+
+                intent.putExtra("UID",UidS);
+                intent.putExtra("NOMBRE",NombreS);
+
+                startActivity(intent);
+                Toast.makeText(Menu.this,"ENVIADO PARÁMETROS", Toast.LENGTH_SHORT).show();
+
+        });
 
         PuntuacionesBtn.setOnClickListener(view -> Toast.makeText(Menu.this, "PUNTUACIONES", Toast.LENGTH_SHORT).show());
 

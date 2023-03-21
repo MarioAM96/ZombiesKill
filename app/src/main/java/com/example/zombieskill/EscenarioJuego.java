@@ -12,6 +12,8 @@ public class EscenarioJuego extends AppCompatActivity {
     TextView TvContador, TvNombre, TvTiempo;
     ImageView IvZombie;
 
+    //j
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

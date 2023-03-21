@@ -44,14 +44,14 @@
 
             <!--ANIMACI”N-->
             <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="15dp"
                 app:lottie_autoPlay="true"
                 app:lottie_fileName="tiempo.json"
                 app:lottie_imageAssetsFolder="assets"
                 app:lottie_loop="true"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="15dp"
-                tools:ignore="ImageContrastCheck" />
+                tools:ignore="ImageContrastCheck,MissingClass,TextSizeCheck" />
 
             <TextView
                 android:id="@+id/TvTiempo"

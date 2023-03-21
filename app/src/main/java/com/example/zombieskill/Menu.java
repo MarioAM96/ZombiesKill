@@ -80,6 +80,7 @@ public class Menu extends AppCompatActivity {
 
                 intent.putExtra("UID",UidS);
                 intent.putExtra("NOMBRE",NombreS);
+                intent.putExtra("ZOMBIE", ZombieS);
 
                 startActivity(intent);
                 Toast.makeText(Menu.this,"ENVIADO PARÁMETROS", Toast.LENGTH_SHORT).show();

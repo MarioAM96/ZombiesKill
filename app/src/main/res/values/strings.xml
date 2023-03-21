@@ -27,4 +27,10 @@
     <string name="AcercaDeBtn">Acerca de</string>
     <string name="CerrarSesionBtn">Cerrar Sesion</string>
 
+    <!--ESCENARIO-->
+
+    <string name="TvContador"> 0 </string>
+    <string name="TvNombre"> ---- </string>
+    <string name="TvTiempo"> 0S </string>
+
 </resources>

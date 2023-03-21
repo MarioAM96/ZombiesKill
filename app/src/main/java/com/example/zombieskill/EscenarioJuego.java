@@ -26,7 +26,7 @@ public class EscenarioJuego extends AppCompatActivity {
 
         Bundle intent = getIntent().getExtras();
         UIDS = intent.getString("UID");
-        NOMBRES = intent.getString("NOMBRES");
+        NOMBRES = intent.getString("NOMBRE");
         ZOMBIES = intent.getString("ZOMBIE");
 
         TvNombre.setText(NOMBRES);

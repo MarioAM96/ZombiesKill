@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.Display;
 import android.widget.ImageView;
@@ -49,6 +50,7 @@ public class EscenarioJuego extends AppCompatActivity {
         TvContador.setText(ZOMBIES);
 
         Pantalla();
+        CuentaAtras();
 
         IvZombie.setOnClickListener(view -> {
             contador++;
@@ -94,5 +96,21 @@ public class EscenarioJuego extends AppCompatActivity {
 
         IvZombie.setX(randomX);
         IvZombie.setY(randmY);
+    }
+
+    private void CuentaAtras() {
+        new CountDownTimer(30000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                //SE EJCUTA CADA SEGUNDO
+                long segundosRestantes = millisUntilFinished/1000;
+                TvTiempo.setText(segundosRestantes+"S");
+
+            }
+            //CUANDO SE ACABA EL TIEMPO
+            public void onFinish() {
+                TvTiempo.setText("0S");
+            }
+        }.start();
     }
 }

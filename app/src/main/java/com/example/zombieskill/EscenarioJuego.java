@@ -2,18 +2,25 @@ package com.example.zombieskill;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
+import android.view.Display;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Random;
 
 public class EscenarioJuego extends AppCompatActivity {
 
     String UIDS, NOMBRES, ZOMBIES;
     TextView TvContador, TvNombre, TvTiempo;
     ImageView IvZombie;
+    TextView AnchoTv, AltoTv;
 
+    int AnchoPantalla, AltoPantalla;
+
+    Random Aleatorio;
     int contador = 0;
 
     //j
@@ -35,26 +42,57 @@ public class EscenarioJuego extends AppCompatActivity {
         NOMBRES = intent.getString("NOMBRE");
         ZOMBIES = intent.getString("ZOMBIE");
 
+        AnchoTv = findViewById(R.id.AnchoTv);
+        AltoTv = findViewById(R.id.AltoTv);
+
         TvNombre.setText(NOMBRES);
         TvContador.setText(ZOMBIES);
 
-        IvZombie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                contador++;
-                TvContador.setText(String.valueOf(contador));
+        Pantalla();
 
-                IvZombie.setImageResource(R.drawable.zombieaplastado);
+        IvZombie.setOnClickListener(view -> {
+            contador++;
+            TvContador.setText(String.valueOf(contador));
 
-                //PERMITE EJECUTAR UN MENSAJE U OBJETO DENTRO DE ESTE CODIGO
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //SE EJECUTA LO DE AQUI DENTRO
-                        IvZombie.setImageResource(R.drawable.zombie);
-                    }
-                }, 500);
-            }
+            IvZombie.setImageResource(R.drawable.zombieaplastado);
+
+            //PERMITE EJECUTAR UN MENSAJE U OBJETO DENTRO DE ESTE CODIGO
+            new Handler().postDelayed(() -> {
+                //SE EJECUTA LO DE AQUI DENTRO
+                IvZombie.setImageResource(R.drawable.zombie);
+                Movimiento();
+            }, 200);
         });
+    }
+
+    private void Pantalla(){
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+
+        AnchoPantalla = point.x;
+        AltoPantalla = point.y;
+
+        String ANCHOS = String.valueOf(AnchoPantalla);
+        String ALTOS = String.valueOf(AltoPantalla);
+
+        AnchoTv.setText(ANCHOS);
+        AltoTv.setText(ALTOS);
+
+        Aleatorio = new Random();
+    }
+
+    private void Movimiento(){
+        int min = 0;
+        //MAXIMOS EN LOS QUE LA IMAGEN SE PUDED MOVER
+        int MaximoX = AnchoPantalla - IvZombie.getWidth();
+        int MaximoY = AltoPantalla - IvZombie.getHeight();
+
+        int randomX = Aleatorio.nextInt(((MaximoX-min)+1)+min);
+        int randmY = Aleatorio.nextInt(((MaximoY-min)+1)+min);
+
+        IvZombie.setX(randomX);
+        IvZombie.setY(randmY);
     }
 }

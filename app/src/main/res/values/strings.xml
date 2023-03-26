@@ -15,11 +15,11 @@
     <string name="BntLogin">Ingresar</string>
     <!--ACTIVIDAD MENU-->
     <string name="MiPOuntuaciontxt">Mi Puntuacion</string>
-    <string name="Zombies">--</string>
+    <string name="Zombies"> -- </string>
     <string name="uid">--</string>
-    <string name="correo">--</string>
-    <string name="nombre">--</string>
-    <string name="fecha">--</string>
+    <string name="correo"> -- </string>
+    <string name="nombre"> -- </string>
+    <string name="fecha"> -- </string>
     <string name="Menutxt">Menu</string>
 
     <string name="JugarBtn">Jugar</string>
@@ -33,4 +33,8 @@
     <string name="TvNombre"> ---- </string>
     <string name="TvTiempo"> 0S </string>
 
+    <!--PANTALLA-->
+
+    <string name="AnchoTv"> -- </string>
+    <string name="AltoTv"> -- </string>
 </resources>

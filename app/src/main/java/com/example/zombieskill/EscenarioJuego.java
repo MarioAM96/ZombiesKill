@@ -22,6 +22,8 @@ public class EscenarioJuego extends AppCompatActivity {
     int AnchoPantalla, AltoPantalla;
 
     Random Aleatorio;
+
+    boolean GameOver = false;
     int contador = 0;
 
     //Revision

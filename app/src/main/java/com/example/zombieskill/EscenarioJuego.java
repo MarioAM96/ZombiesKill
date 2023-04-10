@@ -24,7 +24,7 @@ public class EscenarioJuego extends AppCompatActivity {
     Random Aleatorio;
     int contador = 0;
 
-    //j
+    //Revision
 
 
     @Override
